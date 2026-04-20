@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <nav id="main-navbar" class="navbar">
+        <div class="nav-logo">Cloud<span>Dev</span></div>
+
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-item">Features</a></li>
+            <li><a href="about.html" class="nav-item active">Pricing</a></li>
+            <li><a href="contact.html" class="nav-item">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button id="login-btn" class="btn-secondary">Login</button>
+            <button id="cta-btn" class="btn-primary">Get Started</button>
+        </div>
+    </nav>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>🚀 Special Offer: Get 2 months free on yearly subscriptions!</span>
+            <span>⚡ Trusted by 500+ Tech Startups</span>
+            <span>🔒 100% Secure Payments via Stripe & PayPal</span>
+        </div>
+    </div>
+
+    <section id="pricing">
+        <div id="pricing-header" class="pricing-header-container">
+            <h2 class="section-title">Choose Your Plan</h2>
+            <div class="title-underline"></div>
+            <p class="section-description">
+                Find the perfect hosting plan for your needs. Whether you're just starting out
+                or scaling up, we have a solution for you.
+            </p>
+        </div>
+        <div id="pricing-content" class="pricing-wrapper">
+
+            <div class="pricing-card" id="plan-basic" onclick="selectPlan(this)">
+
+                <div class="toggle-container">
+                    <span>Monthly</span>
+                    <label class="switch">
+                        <input type="checkbox" id="price-toggle" onclick="togglePrices(this,'price-basic')">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="yearly-text">Yearly <small class="discount-badge">Save 20%</small></span>
+                </div>
+
+                <div class="card-header">
+                    <h3>Basic</h3>
+                    <p class="price" id="price-basic" data-monthly="$9.99" data-yearly="$95.90"></p>
+                        <span class="plan-details">
+                            <p>Perfect for individual developers and small side projects.</p>
+                        </span>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>10 GB Storage</li>
+                        <li>100 GB Bandwidth</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button class="btn-primary">Choose Basic</button>
+                </div>
+            </div>
+
+            <div class="pricing-card" id="plan-pro" onclick="selectPlan(this)">
+
+                <div class="toggle-container">
+                    <span>Monthly</span>
+                    <label class="switch">
+                        <input type="checkbox" id="price-toggle" onclick="togglePrices(this,'price-pro')">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="yearly-text">Yearly <small class="discount-badge">Save 20%</small></span>
+                </div>
+
+                <div class="card-header">
+                    <h3>Pro</h3>
+                    <p class="price" id="price-pro" data-monthly="$49.99" data-yearly="$479.99">
+                                           </p>
+                    <span class="plan-details">
+                        <p>Designed for growing startups needing more power and speed.</p>
+                    </span>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>50 GB Storage</li>
+                        <li>500 GB Bandwidth</li>
+                        <li>Priority Email Support</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button class="btn-primary">Choose Pro</button>
+                </div>
+            </div>
+
+            <div class="pricing-card" id="plan-advance" onclick="selectPlan(this)">
+
+
+                <div class="toggle-container">
+                    <span>Monthly</span>
+                    <label class="switch">
+                        <input type="checkbox" id="price-toggle" onclick="togglePrices(this,'price-advance')">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="yearly-text">Yearly <small class="discount-badge">Save 20%</small></span>
+                </div>
+
+
+                <div class="card-header">
+                    <h3>Advance</h3>
+                    <p class="price" id="price-advance" data-monthly="$99.99" data-yearly="$959.99">
+                    </p>
+                    <span class="plan-details">
+                        <p>Enterprise-grade solution for high-traffic applications.</p>
+                    </span>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Unlimited Storage</li>
+                        <li>Unlimited Bandwidth</li>
+                        <li>Dedicated Account Manager</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button class="btn-primary">Choose Advance</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
