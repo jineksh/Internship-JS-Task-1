@@ -7,17 +7,35 @@ function selectPlan(card) {
 
 }
 
+function toggleAllPrices(toggleElement) {
+    const isYearly = toggleElement.checked;
+    const priceIds = ['price-basic', 'price-pro', 'price-advance'];
 
-function togglePrices(checkbox,priceId) {
-    const checked = checkbox.checked;
-    const priceElement = document.getElementById(priceId);
-    const monthlyPrice = priceElement.getAttribute('data-monthly');
-    const yearlyPrice = priceElement.getAttribute('data-yearly');
+    const monthlyLabel = document.getElementById('text-monthly');
+    const yearlyLabel = document.getElementById('text-yearly');
 
-    priceElement.textContent = checked ? yearlyPrice + '/year' : monthlyPrice + '/month';
+   
+    priceIds.forEach(id => {
+        const priceElement = document.getElementById(id);
+        const monthlyPrice = priceElement.getAttribute('data-monthly');
+        const yearlyPrice = priceElement.getAttribute('data-yearly');
+        priceElement.innerText = isYearly ? `${yearlyPrice}/yearly` : `${monthlyPrice}/monthly`;
+    });
+
+    
+    if (isYearly) {
+        yearlyLabel.classList.add('active-price-text');
+        monthlyLabel.classList.remove('active-price-text');
+        monthlyLabel.classList.add('inactive-strike'); // Optional strike
+        yearlyLabel.classList.remove('inactive-strike');
+    } else {
+        monthlyLabel.classList.add('active-price-text');
+        yearlyLabel.classList.remove('active-price-text');
+        yearlyLabel.classList.add('inactive-strike'); // Optional strike
+        monthlyLabel.classList.remove('inactive-strike');
+    }
 }
-
 document.querySelectorAll('.price').forEach(price => {
-  const monthly = price.dataset.monthly;
-  price.textContent = `${monthly}/month`;
+    const monthly = price.dataset.monthly;
+    price.textContent = `${monthly}/monthly`;
 });
