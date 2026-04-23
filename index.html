@@ -59,7 +59,12 @@
             <div class="pricing-card" id="plan-basic" onclick="selectPlan(this)">
                 <div class="card-header">
                     <h3>Basic</h3>
-                    <p class="price" id="price-basic" data-monthly="$9.99" data-yearly="$95.90">$9.99</p>
+                    <p class="price" id="price-basic" data-monthly="$9.99" data-yearly="$95.90">
+
+                    </p>
+                    <p class="billing-info" id="billing-basic">
+                        Billed yearly (Save $23.98)
+                    </p>
                     <span class="plan-details">
                         <p>Perfect for individual developers and small side projects.</p>
                     </span>
@@ -69,6 +74,11 @@
                         <li>10 GB Storage</li>
                         <li>100 GB Bandwidth</li>
                         <li>24/7 Support</li>
+
+                        <!-- Disadvantages -->
+                        <li>Limited scalability for growing apps</li>
+                        <li>No priority support</li>
+                        <li>Performance may slow under high traffic</li>
                     </ul>
                 </div>
                 <div class="card-footer">
@@ -81,6 +91,8 @@
                 <div class="card-header">
                     <h3>Pro</h3>
                     <p class="price" id="price-pro" data-monthly="$49.99" data-yearly="$479.99">$49.99</p>
+                    <p class="billing-info" id="billing-pro">
+                        Billed yearly (Save $119.88)</p>
                     <span class="plan-details">
                         <p>Designed for growing startups needing more power and speed.</p>
                     </span>
@@ -90,6 +102,11 @@
                         <li>50 GB Storage</li>
                         <li>500 GB Bandwidth</li>
                         <li>Priority Email Support</li>
+
+                        <!-- Disadvantages -->
+                        <li>No dedicated account manager</li>
+                        <li>Higher cost compared to basic plans</li>
+                        <li>Limited customization for enterprise needs</li>
                     </ul>
                 </div>
                 <div class="card-footer">
@@ -101,6 +118,9 @@
                 <div class="card-header">
                     <h3>Advance</h3>
                     <p class="price" id="price-advance" data-monthly="$99.99" data-yearly="$959.99">$99.99</p>
+                    <p class="billing-info" id="billing-advance">
+                        Billed yearly (Save $239.89)
+                    </p>
                     <span class="plan-details">
                         <p>Enterprise-grade solution for high-traffic applications.</p>
                     </span>
@@ -110,6 +130,11 @@
                         <li>Unlimited Storage</li>
                         <li>Unlimited Bandwidth</li>
                         <li>Dedicated Account Manager</li>
+
+                        <!-- Disadvantages -->
+                        <li>Expensive for small teams or individuals</li>
+                        <li>Overkill for simple projects</li>
+                        <li>Requires technical knowledge to fully utilize features</li>
                     </ul>
                 </div>
                 <div class="card-footer">

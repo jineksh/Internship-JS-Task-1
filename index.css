@@ -140,6 +140,14 @@ body {
     margin: 0 auto;
 }
 
+.billing-info {
+    font-size: 13px;
+    color: #28a745;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
 .section-title {
     font-size: 3rem;
     font-weight: 800;
@@ -231,6 +239,21 @@ body {
     content: '✓';
     color: #007BFF;
     font-weight: bold;
+}
+
+.card-body ul li:nth-last-child(-n+3) {
+    color: #d9534f; /* soft red */
+}
+
+
+.card-body ul li:nth-last-child(-n+3)::before {
+    content: '✗';
+    color: #d9534f;
+}
+
+
+.card-body ul li:nth-last-child(-n+3) {
+    opacity: 0.9;
 }
 
 .pricing-card button {
@@ -363,5 +386,47 @@ body {
 
     .pricing-wrapper {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+    .pricing-wrapper {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        gap: 20px;
+        padding: 0 30px;
+    }
+
+    .pricing-card {
+        padding: 30px 20px; 
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+
+/* Tablet & above */
+/* 📱 Tablet only (iPad range) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .card-body ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+
+    .card-body li {
+        width: calc(50% - 10px); /* 2 column */
+        border-bottom: none;
     }
 }
