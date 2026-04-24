@@ -7,34 +7,43 @@ function selectPlan(card) {
 
 }
 
-function toggleAllPrices(toggleElement) {
-    const isYearly = toggleElement.checked;
-    const priceIds = ['price-basic', 'price-pro', 'price-advance'];
-
-    const monthlyLabel = document.getElementById('text-monthly');
-    const yearlyLabel = document.getElementById('text-yearly');
-
-   
-    priceIds.forEach(id => {
-        const priceElement = document.getElementById(id);
-        const monthlyPrice = priceElement.getAttribute('data-monthly');
-        const yearlyPrice = priceElement.getAttribute('data-yearly');
-        priceElement.innerText = isYearly ? `${yearlyPrice}/yearly` : `${monthlyPrice}/monthly`;
-    });
-
+function toggleAllPrices(toggle) {
+    const isYearly = toggle.checked;
+    const prices = document.querySelectorAll('.price');
+    const billingInfos = document.querySelectorAll('.billing-info');
     
-    if (isYearly) {
-        yearlyLabel.classList.add('active-price-text');
-        monthlyLabel.classList.remove('active-price-text');
-        monthlyLabel.classList.add('inactive-strike'); // Optional strike
-        yearlyLabel.classList.remove('inactive-strike');
-    } else {
-        monthlyLabel.classList.add('active-price-text');
-        yearlyLabel.classList.remove('active-price-text');
-        yearlyLabel.classList.add('inactive-strike'); // Optional strike
-        monthlyLabel.classList.remove('inactive-strike');
-    }
+    const textMonthly = document.getElementById('text-monthly');
+    const textYearly = document.getElementById('text-yearly');
+
+    prices.forEach((priceElement, index) => {
+        if (isYearly) {
+            
+            const discountedPrice = priceElement.getAttribute('data-yearly-monthly');
+            const totalYearly = priceElement.getAttribute('data-yearly');
+            
+            priceElement.innerHTML = `${discountedPrice} <span class="per-month">/mo</span>`;
+            
+            if(billingInfos[index]) {
+                billingInfos[index].textContent = `Billed ${totalYearly} annually`;
+            }
+
+            textYearly.classList.add('active-price-text');
+            textMonthly.classList.remove('active-price-text');
+        } else {
+            const monthlyPrice = priceElement.getAttribute('data-monthly');
+            
+            priceElement.innerHTML = `${monthlyPrice} <span class="per-month">/mo</span>`;
+            
+            if(billingInfos[index]) {
+                billingInfos[index].textContent = "Billed monthly";
+            }
+
+            textMonthly.classList.add('active-price-text');
+            textYearly.classList.remove('active-price-text');
+        }
+    });
 }
+
 document.querySelectorAll('.price').forEach(price => {
     const monthly = price.dataset.monthly;
     price.textContent = `${monthly}/monthly`;
