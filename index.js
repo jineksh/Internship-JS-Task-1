@@ -21,7 +21,7 @@ function toggleAllPrices(toggle) {
             const discountedPrice = priceElement.getAttribute('data-yearly-monthly');
             const totalYearly = priceElement.getAttribute('data-yearly');
             
-            priceElement.innerHTML = `${discountedPrice} <span class="per-month">/mo</span>`;
+            priceElement.innerHTML = `${totalYearly} <span class="per-month">/yearly</span>`;
             
             if(billingInfos[index]) {
                 billingInfos[index].textContent = `Billed ${totalYearly} annually`;
@@ -32,7 +32,7 @@ function toggleAllPrices(toggle) {
         } else {
             const monthlyPrice = priceElement.getAttribute('data-monthly');
             
-            priceElement.innerHTML = `${monthlyPrice} <span class="per-month">/mo</span>`;
+            priceElement.innerHTML = `${monthlyPrice} <span class="per-month">/monthly</span>`;
             
             if(billingInfos[index]) {
                 billingInfos[index].textContent = "Billed monthly";
